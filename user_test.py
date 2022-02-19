@@ -59,6 +59,21 @@ class Testuser(unittest.TestCase):
         self.new_user.delete_user()#Deleting a user
         self.assertEqual(len(user.user_list),1)
 
+    @classmethod
+    def find_by_email(cls,email):
+        '''
+        Method that takes in an email and returns a contact matching that user.
+
+        Args:
+            email: email to search for
+        Returns :
+            user of person matching the email.
+        '''
+
+        for user in cls.user_list:
+            if user.email == email:
+                return user    
+
 
 if __name__ == '__main__':
     unittest.main()
