@@ -1,7 +1,7 @@
 
 import pyperclip #importing pyperclip
 from user import user # importing user class
-from credential import credential # import credential class
+from credential import user # import credential class
   
 
 def test_copy_name(self):  
