@@ -6,7 +6,7 @@ from unicodedata import name
 
 from click import password_option
 from user import user
-from credential import credential
+from credential import user
 
 
 def create_user(user_name,password):
@@ -44,7 +44,7 @@ def main():
         short_code = input().lower()
 
         if short_code == 'nu':
-            print("user") 
+            print(" create user") 
 
             print("user name....")
             user_name = input()
@@ -57,8 +57,34 @@ def main():
 
             save_users(create_user(name,password,email))# creating and saving a user
             print ('\n')
-            print (f"new user { user_name} {password} created")
-            print ('\n')    
+            print (f"new user { user_name} {password} {email} created")
+            print ('\n') 
+
+
+        elif short_code == 'aa': 
+            print("create your new app") 
+
+            print("user name..")
+            user_name = input() 
+
+            print ("password")
+            password = input()
+
+            print ("email address")
+            email = input()
+
+            save_users(create_user(name,password,email))# creating and saving a user's credential
+            print ('\n')
+            print (f"new application { user_name} {password} {email} created")
+            print ('\n')  
+
+        elif short_code =='dl':
+            print("delete an app")
+            
+
+
+
+
 
 
        
