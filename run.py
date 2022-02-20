@@ -122,8 +122,8 @@ def main():
             print (f"new application { user_name} {password} {email} saved")
             print ('\n')  
 
-        elif short_code == 'suc': 
-            print("save other app credential") 
+        elif short_code == 'cc': 
+            print("create app in password locker") 
 
             print("user name..")
             user_name = input() 
@@ -134,14 +134,10 @@ def main():
             print ("email address")
             email = input()
 
-            save_credentials(save_credential(name,password,email))# creating and saving a user's credential
+            create_credential(create_credential(name,password,email))# creating and saving a user's credential
             print ('\n')
             print (f"new application { user_name} {password} {email} created")
             print ('\n')  
-
-
-
-
 
         elif short_code =='dl':
             print("delete an app")
