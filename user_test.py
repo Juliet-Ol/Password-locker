@@ -14,23 +14,9 @@ def test_copy_name(self):
 
 
 
-def test_copy_name(self):  
-    '''
-    Test to confirm that we are copying the name from a found credential
-    ''' 
-    self.new_credential.save_credential()
-    credential.copy_name("Juliet")
-    credential.copy_password("Ihavethis*")
-
-    self.assertEqual(self.new_user.name,pyperclip.paste())     
-
-
-
-
-
 import unittest #importing the unitest module
 from user import user #importing user class
-from credential import credential # import credential class
+
 
 class Testuser(unittest.TestCase):
 
