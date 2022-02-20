@@ -55,6 +55,18 @@ class Testcredential(unittest.TestCase):
         self.new_user.delete_user()#Deleting a user
         self.assertEqual(len(credential.credential_list),1)
 
+
+    def test_save_multiple_credential(self):
+            '''
+            test_save_multiple_credential to check if we can save multiple credentials
+            objects to our credential_list
+            '''
+            self.new_credential.save_credential()
+            test_credential = credential("Test","user","metoo1","test@user.com") # new contact
+            test_credential.save_credential()
+            self.assertEqual(len(credential.credential_list),2)
+
+
     @classmethod
     def find_by_email(cls,email):
         '''
