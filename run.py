@@ -18,7 +18,7 @@ def create_user(user_name,password,email):
     return new_user
 
  
-def save_users(user):
+def save_user(user):
     '''
     Function to save user
     '''  
@@ -99,10 +99,11 @@ def main():
             print ("email address")
             email = input()
 
-            save_users(create_user(name,password,email))# creating and saving a user
+            save_user(create_user(user_name,password,email))# creating and saving a user
             print ('\n')
             print (f"new user { user_name} {password} {email} created")
             print ('\n') 
+
 
 
         elif short_code == 'suc': 
