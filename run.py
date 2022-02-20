@@ -142,7 +142,9 @@ def main():
         elif short_code =='dl':
             print("delete an app")
 
-            
+if __name__ == '__main__':
+
+    main()            
             
 
 
