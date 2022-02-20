@@ -6,14 +6,15 @@ from unicodedata import name
 
 from click import password_option
 from user import user
-from credential import user
+from credential import credential
 
 
-def create_user(user_name,password):
+#user function for behaviours expected
+def create_user(user_name,password,email):
     '''
     Function to create a new user
     '''
-    new_user = user(user_name,password)
+    new_user = user(user_name,password,email)
     return new_user
 
  
@@ -23,11 +24,35 @@ def save_users(user):
     '''  
     user.save_user() 
 
+def del_user(user):
+    '''
+    Function to delete a user
+    '''
+    user.delete_user()    
+
+
+
+#credential functions for behaviour expected    
+
+def create_credential(user_name,password,email):
+    '''
+    Function to create a new credential
+    '''
+    new_credential = credential(user_name,email,password)
+    return new_credential
+
+def save_credentials(credentials):
+    '''
+    Function to save credential
+    '''  
+    credential.save_credential() 
+
+
 def del_credential(credential):
     '''
     Function to delete a credential account
     '''  
-    credential.delete_credential  
+    credential.delete_credential() 
 
 
 
