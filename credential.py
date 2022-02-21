@@ -12,9 +12,12 @@ class credential:
         self.password = password
 
 
-    # def save_credential(self):
-    #     '''
-    #     save_user method saves user objects in user list
-    #     '''
+    
+    credential_list = [] #empty list
+    
+    def save_credential(self):
+        '''
+        save_user method saves user objects in user list
+        '''
 
-    #     credential.save_credential.append(self)   
+        credential.save_credential.append(self)   

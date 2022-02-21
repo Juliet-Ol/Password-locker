@@ -7,6 +7,7 @@ def test_copy_name(self):
     self.new_credential.save_credential()
     credential.copy_name("Juliet")
     credential.copy_password("Ihavethis*")
+    credential.copy_email("juliet@gmail.com")
 
     self.assertEqual(self.new_user.name,pyperclip.paste())   
 
@@ -50,9 +51,9 @@ class Testcredential(unittest.TestCase):
 
     def test_delete_credential(self):
         '''
-        test_delete_user to test if credential can be deleted
+        test_delete_credential to test if credential can be deleted
         '''
-        self.new_user.delete_user()#Deleting a user
+        self.new_credential.delete_user()#Deleting a credential
         self.assertEqual(len(credential.credential_list),1)
 
 
