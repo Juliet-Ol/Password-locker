@@ -18,6 +18,15 @@ def create_user(user_name,password,email):
     user.save_user
     return new_user
 
+def login_user(user_name,password): 
+    '''
+    Function to create log in
+    '''
+    login_user = user(user_name,password)
+    user.login_user
+    return login_user
+
+
  
 # def save_user(user):
 #     '''
@@ -85,7 +94,7 @@ def main():
     print('\n')
 
     while True:
-        print("use this short codes : nu - create a new user, su - save user, suc - save credential in user, cc - create credential in user, dl - delete account. sa - save account")
+        print("use this short codes : nu - create a new user, li-log in, suc - save credential in user, cc - create credential in user, dl - delete account, ex -exit account")
 
         short_code = input().lower()
 
@@ -107,6 +116,16 @@ def main():
             print ('\n') 
 
 
+        elif short_code == 'li':
+            print("Log in to your account") 
+
+            print("user_name")
+            user_name = input()
+
+            print("password") 
+            password = input()  
+
+
 
         elif short_code == 'suc': 
             print("save other app credential") 
@@ -120,7 +139,7 @@ def main():
             print ("email address")
             email = input()
 
-            save_credential(save_credential(name,password,email))# creating and saving a user's credential
+            save_credential(save_credential(user_name,password,email))# creating and saving a user's credential
             print ('\n')
             print (f"new application { user_name} {password} {email} saved")
             print ('\n')  
@@ -144,6 +163,14 @@ def main():
 
         elif short_code =='dl':
             print("delete an app")
+
+        elif short_code == 'ex':
+            print("Thank you for using our app..")
+
+        else:
+            print("Please use the short codes")        
+
+
 
 if __name__ == '__main__':
 
