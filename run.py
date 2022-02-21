@@ -15,14 +15,15 @@ def create_user(user_name,password,email):
     Function to create a new user
     '''
     new_user = user(user_name,password,email)
+    user.save_user
     return new_user
 
  
-def save_user(user):
-    '''
-    Function to save user
-    '''  
-    user.save_user()
+# def save_user(user):
+#     '''
+#     Function to save user
+#     '''  
+#     user.save_user()
 
 def save_credential(user): 
     '''
@@ -52,6 +53,7 @@ def create_credential(user_name,password,email):
     Function to create a new credential
     '''
     new_credential = credential(user_name,email,password)
+    credential.save_credential
     return new_credential
 
 # def save_credentials(credentials):
@@ -76,7 +78,7 @@ def password_option_credential(credential):
 
 # calling funcion
 def main():
-    print("Welcome to life made simple with password locker. What is your user name?")
+    print("Welcome to life made simple with password locker. What is your name?")
     user_name = input()
 
     print(f"Hello {user_name}. what would you like to do?")
@@ -99,7 +101,7 @@ def main():
             print ("email address")
             email = input()
 
-            save_user(create_user(user_name,password,email))# creating and saving a user
+            user.save_user(create_user(user_name,password,email))# creating and saving a user
             print ('\n')
             print (f"new user { user_name} {password} {email} created")
             print ('\n') 
@@ -135,7 +137,7 @@ def main():
             print ("email address")
             email = input()
 
-            create_credential(create_credential(name,password,email))# creating and saving a user's credential
+            credential.save_credetial(create_credential(name,password,email))# creating and saving a user's credential
             print ('\n')
             print (f"new application { user_name} {password} {email} created")
             print ('\n')  
