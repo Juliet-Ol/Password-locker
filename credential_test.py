@@ -49,6 +49,7 @@ class Testcredential(unittest.TestCase):
         self.new_user.save_user()
         self.assertEqual(len(credential.credential_list),1)  
 
+    
     def test_delete_credential(self):
         '''
         test_delete_credential to test if credential can be deleted
@@ -66,6 +67,12 @@ class Testcredential(unittest.TestCase):
             test_credential = credential("Test","user","metoo1","test@user.com") # new contact
             test_credential.save_credential()
             self.assertEqual(len(credential.credential_list),2)
+
+    def display_all_credentials(self): 
+        '''
+        method that returns the credential apps
+        '''
+        self.assertEqual(credential.display_credential(),credential.credential_list)
 
 
     @classmethod

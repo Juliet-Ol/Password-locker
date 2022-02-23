@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.8
-
+import random
 import email
 from hashlib import new
 from unicodedata import name
@@ -9,7 +9,7 @@ from user import user
 from credential import credential
 
 
-# user function for behaviours expected
+# function for behaviours expected
 def create_user(user_name, password, email):
     '''
     Function to create a new user
@@ -27,12 +27,6 @@ def login_user(user_name, password):
     user.login_user
     return login_user
 
-
-# def save_user(user):
-#     '''
-#     Function to save user
-#     '''
-#     user.save_user()
 
 def save_credential(credential):
     '''
@@ -54,7 +48,8 @@ def del_user(user):
     '''
     Function to delete a user
     '''
-    user.delete_user()
+    del_user =  user(user)
+    return del_user
 
 
 # credential functions for behaviours expected
@@ -67,18 +62,19 @@ def create_credential(user_name, password, email):
     credential.save_credential
     return new_credential
 
-# def save_credentials(credentials):
-#     '''
-#     Function to save credential
-#     '''
-#     credential.save_credential()
-
 
 def del_credential(credential):
     '''
     Function to delete a credential account
     '''
     credential.delete_credential()
+
+@classmethod
+def display_credentials(cls): 
+    '''
+    method that returns the credential apps
+    '''
+    return cls.credential_list
 
 
 def password_option_credential(credential):
@@ -97,7 +93,7 @@ def main():
     print('\n')
 
     while True:
-        print("use this short codes : nu - create a new user, li-log in, suc - save credential in user, cc - create credential in user, dl - delete account, ex -exit account")
+        print("use this short codes : nu - create a new user, li-log in, dc - display credentials, suc - save credential in user, cc - create credential in user, dl - delete account, ex -exit account")
 
         short_code = input().lower()
 
@@ -141,7 +137,7 @@ def main():
             # creating and saving a user's credential
             credential.save_credential(save_credential(credential))
             print('\n')
-            print(f"new application { user_name} {password} saved")
+            print(f"new application for user name { user_name} password {password} saved")
             print('\n')
 
         elif short_code == 'cc':
@@ -159,8 +155,23 @@ def main():
             # creating and saving a user's credential
             credential.save_credential(create_credential(name, password, email))
             print('\n')
-            print(f"new application { user_name} {password} {email} created")
+            print(f"new application user name { user_name} password {password} and email {email} created")
             print('\n')
+
+        elif short_code == 'dc':
+            
+            if display_credentials():
+                print("list of your applications")
+                print('\n')
+
+            for credential in display_credentials():
+                print(f'{user_name}',{password}) 
+                print('\n')  
+
+            else:
+                print('\n')
+                print("No applications created.") 
+                print('\n')       
 
         elif short_code == 'dl':
             print("app deleted")
