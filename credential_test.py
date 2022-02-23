@@ -13,7 +13,6 @@ def test_copy_name(self):
 
 
 
-
 import unittest #importing the unitest module
 from credential import credential # import credential class
 

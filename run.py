@@ -1,10 +1,4 @@
 #!/usr/bin/env python3.8
-import random
-import email
-from hashlib import new
-from unicodedata import name
-
-from click import password_option
 from user import user
 from credential import credential
 
@@ -153,7 +147,7 @@ def main():
             email = input()
 
             # creating and saving a user's credential
-            credential.save_credential(create_credential(name, password, email))
+            credential.save_credential(create_credential(user_name, password, email))
             print('\n')
             print(f"new application user name { user_name} password {password} and email {email} created")
             print('\n')
